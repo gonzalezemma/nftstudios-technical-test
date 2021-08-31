@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+.NtfsList {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 10px;
+}
+
+.NtfsList-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin: 5px;
+  border: solid 1px;
+  border-radius: 10px;
+  border-color: black;
+}
+
+.NtfsList-item img {
+  padding: 10px;
+  height: 200px;
+  width: 200px;
+}
