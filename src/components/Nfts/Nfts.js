@@ -1,20 +1,25 @@
 import React,  { useEffect, useState } from 'react';
-import { map } from 'lodash';
+import { map, set } from 'lodash';
 import getNtfs from '../../service/nfts';
-import './Nfts.css'
+import './Nfts.css';
 
 const Nfts = () => {
-    const [ntfs, setNtfs] = useState([])
+    const [ntfs, setNtfs] = useState([]);
+    const [page, setPage] = useState(0);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         setLoading(true);
-        getNtfs({}).then(res => {
+        getNtfs({page}).then(res => {
             setNtfs(res.assets);
             setLoading(false);
         });
-    }, [setNtfs])
+    }, [page])
     
+    const handleClick = () => {
+        setPage(prevPage => prevPage + 1)
+    }
+
     return (
         <>
             {loading ? 
@@ -26,8 +31,10 @@ const Nfts = () => {
                             <h6>{ntf.name}</h6>
                         </div>
                     ))}
+                    <button onClick={handleClick}>next page</button>
                 </div>
             }
         </>
 )}
+
 export default Nfts
