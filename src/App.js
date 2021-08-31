@@ -1,11 +1,14 @@
-import Nfts from './components/Nfts/Nfts';
+import Assets from './components/Nfts/Assets';
+import { AssetsContextProvider } from 'context/assetsContext';
 import './App.css';
 
 function App() {
   
   return (
     <div className="App">
-      <Nfts/>
+      <AssetsContextProvider>
+        <Assets/>
+      </AssetsContextProvider>
     </div>
   );
 }

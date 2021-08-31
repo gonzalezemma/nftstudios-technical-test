@@ -3,8 +3,9 @@ import { map } from 'lodash';
 import useAssets from 'hooks/useAssets';
 import './Assets.css';
 
-const Nfts = () => {
+const Assets = () => {
     const {assets, loading, handleClick} = useAssets();
+
     return (
         <>
             {loading ? 
@@ -22,4 +23,4 @@ const Nfts = () => {
         </>
 )}
 
-export default Nfts
+export default Assets

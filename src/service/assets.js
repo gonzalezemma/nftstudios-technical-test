@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { map } from 'lodash'
 
 const url = 'https://api.opensea.io/api/v1/assets'
 
@@ -14,8 +15,12 @@ const getAssets = async ({page = 0}) => {
             collection: 'pixelchain'
         }
     })
-    
-    return data
+
+    const assets = map(data.assets, asset => {
+        const {id, name, image_preview_url} = asset
+        return {id, name, image_preview_url}
+    })
+    return assets
 }
 
 export default getAssets
