@@ -1,34 +1,19 @@
-import React,  { useEffect, useState } from 'react';
-import { map, set } from 'lodash';
-import getNtfs from '../../service/nfts';
-import './Nfts.css';
+import React from 'react';
+import { map } from 'lodash';
+import useAssets from 'hooks/useAssets';
+import './Assets.css';
 
 const Nfts = () => {
-    const [ntfs, setNtfs] = useState([]);
-    const [page, setPage] = useState(0);
-    const [loading, setLoading] = useState(false);
-
-    useEffect(() => {
-        setLoading(true);
-        getNtfs({page}).then(res => {
-            setNtfs(res.assets);
-            setLoading(false);
-        });
-    }, [page])
-    
-    const handleClick = () => {
-        setPage(prevPage => prevPage + 1)
-    }
-
+    const {assets, loading, handleClick} = useAssets();
     return (
         <>
             {loading ? 
                 'Loading...' :
-                <div className="NtfsList">
-                    {map(ntfs, ntf => (
-                        <div key={ntf.id} className="NtfsList-item"> 
-                            <img src={ntf.image_preview_url} alt={ntf.name}/>
-                            <h6>{ntf.name}</h6>
+                <div className="AssetsList">
+                    {map(assets, nft => (
+                        <div key={nft.id} className="AssetsList-item"> 
+                            <img src={nft.image_preview_url} alt={nft.name}/>
+                            <h6>{nft.name}</h6>
                         </div>
                     ))}
                     <button onClick={handleClick}>next page</button>

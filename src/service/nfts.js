@@ -8,6 +8,7 @@ const getNtfs = ({page = 0}) => {
         limit: 20,
         offset: page * 10,
         order_direction: 'desc',
+        collection: 'pixelchain'
     }
     
     url.search = new URLSearchParams(params).toString();

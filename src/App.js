@@ -1,5 +1,5 @@
-import './App.css';
 import Nfts from './components/Nfts/Nfts';
+import './App.css';
 
 function App() {
   

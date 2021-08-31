@@ -1,11 +1,11 @@
-.NtfsList {
+.AssetsList {
     display: grid;
     align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
     gap: 10px;
 }
   
-.NtfsList-item{
+.AssetsList-item{
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -15,7 +15,7 @@
     border-color: black;
 }
   
-.NtfsList-item img {
+.AssetsList-item img {
     padding: 10px;
     height: 200px;
     width: 200px;
