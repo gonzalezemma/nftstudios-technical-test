@@ -1,4 +1,4 @@
-import {useContext, useEffect, useState} from 'react'
+import {useCallback, useContext, useEffect, useRef, useState} from 'react'
 import { concat } from 'lodash';
 
 import Context from 'context/assetsContext';
@@ -9,6 +9,8 @@ const useAssets = () => {
     const [page, setPage] = useState(0);
     const [loading, setLoading] = useState(false);
     const [loadingPage, setLoadingPage] = useState(false);
+
+    const observer = useRef();
 
     useEffect(() => {
         setLoading(true);
@@ -29,8 +31,19 @@ const useAssets = () => {
         });
     }, [page, setAssets])
     
+    const lastRefAsset = useCallback(asset => {
+        if (loading) return;
+        if (observer.current) observer.current.disconnect();
+        observer.current = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting) {
+              setPage(prevPage => prevPage + 1);
+            }
+        })
+        if (asset) observer.current.observe(asset);
+      
+    }, [loading, setPage])
 
-    return {assets, loading, loadingPage, setPage}
+    return {assets, loading, loadingPage, lastRefAsset}
 }
 
 export default useAssets;

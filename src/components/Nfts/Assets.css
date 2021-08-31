@@ -14,12 +14,14 @@
     border: solid 1px;
     border-radius: 10px;
     border-color: white;
+    background-color: #65686ec0;
+    box-shadow: 0px 0px 5px yellowgreen;
 }
   
 .AssetsList-item img {
     margin: 10px;
-    height: 200px;
-    width: 200px;
+    height: 250px;
+    width: 250px;
     box-shadow: 2px 3px 6px gray;
 }
 
