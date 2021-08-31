@@ -4,7 +4,11 @@ import useAssets from 'hooks/useAssets';
 import './Assets.css';
 
 const Assets = () => {
-    const {assets, loading, handleClick} = useAssets();
+    const {assets, loading, loadingPage, setPage} = useAssets();
+
+    const handleClick = () => {
+        setPage(prevPage => prevPage + 1)
+    }
 
     return (
         <>
@@ -17,6 +21,7 @@ const Assets = () => {
                             <h6>{nft.name}</h6>
                         </div>
                     ))}
+                    {loadingPage && <p>'loading...</p>}
                     <button onClick={handleClick}>next page</button>
                 </div>
             }

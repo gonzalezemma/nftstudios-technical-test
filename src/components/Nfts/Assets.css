@@ -2,6 +2,7 @@
     display: grid;
     align-items: center;
     grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    background-color: #282c34;
     gap: 10px;
 }
   
