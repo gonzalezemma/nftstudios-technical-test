@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import getNtfs from 'service/nfts';
+import getNtfs from 'service/assets';
 
 const useAssets = () => {
     const [assets, setAssets] = useState([]);

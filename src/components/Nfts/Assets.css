@@ -12,11 +12,18 @@
     margin: 5px;
     border: solid 1px;
     border-radius: 10px;
-    border-color: black;
+    border-color: white;
 }
   
 .AssetsList-item img {
-    padding: 10px;
+    margin: 10px;
     height: 200px;
     width: 200px;
+    box-shadow: 2px 3px 6px gray;
+}
+
+.AssetsList-item h6 {
+    font-size: medium;
+    color: white;
+    margin-left: 20px;
 }
