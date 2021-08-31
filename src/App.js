@@ -1,4 +1,4 @@
-import Assets from './components/Nfts/Assets';
+import Assets from './components/Assets/Assets';
 import { AssetsContextProvider } from 'context/assetsContext';
 import './App.css';
 

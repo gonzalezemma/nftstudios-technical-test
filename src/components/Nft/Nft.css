@@ -1,12 +1,4 @@
-.AssetsList {
-    display: grid;
-    align-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
-    background-color: #282c34;
-    gap: 10px;
-}
-  
-.AssetsList-item{
+.Nft {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -18,14 +10,14 @@
     box-shadow: 0px 0px 5px yellowgreen;
 }
   
-.AssetsList-item img {
+.Nft img {
     margin: 10px;
     height: 250px;
     width: 250px;
     box-shadow: 2px 3px 6px gray;
 }
 
-.AssetsList-item h6 {
+.Nft h6 {
     font-size: medium;
     color: white;
     margin-left: 20px;

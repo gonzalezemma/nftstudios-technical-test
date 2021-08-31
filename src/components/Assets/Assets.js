@@ -1,21 +1,25 @@
 import React from 'react';
 import { map } from 'lodash';
 import useAssets from 'hooks/useAssets';
+import Nft from 'components/Nft/Nft';
 import './Assets.css';
 
 const Assets = () => {
     const {assets, loading, loadingPage, lastRefAsset} = useAssets();
-   
+
     return (
         <>
             {loading ? 
                 'Loading...' :
                 <div className="AssetsList">
-                    {map(assets, nft => (
-                        <div key={nft.id} ref={lastRefAsset} className="AssetsList-item"> 
-                            <img src={nft.image_preview_url} alt={nft.name}/>
-                            <h6>{nft.name}</h6>
-                        </div>
+                    {map(assets, ({id, name, image_preview_url}) => (
+                        <Nft 
+                            key={id} 
+                            id={id} 
+                            name={name} 
+                            image={image_preview_url}
+                            lastRefAsset={lastRefAsset}                           
+                        />
                     ))}
                     {loadingPage && <p>loading...</p>}
                 </div>
