@@ -13,7 +13,7 @@ test('nft rendering', () => {
 
   component.getByTestId(id)
   expect(component.container).toHaveTextContent(name)
-  component.getByRole('img', {src:image})
+  component.getByRole('img', {src:image, alt:name})
 });
 
 test('scroll down call ref to do infinite scroll', () => {
