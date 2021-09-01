@@ -1,8 +1,8 @@
 import React from 'react';
 import { map } from 'lodash';
 import useAssets from 'hooks/useAssets';
-import Nft from 'components/Nft/Nft';
-import Spinner from 'components/Spinner/Spinner'
+import Nft from 'components/Nft';
+import Spinner from 'components/Spinner'
 import './Assets.css';
 
 const Assets = () => {

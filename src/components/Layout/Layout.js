@@ -1,6 +1,6 @@
 import React from 'react'
-import Banner from 'components/Banner/Banner';
-import Assets from 'components/Assets/Assets';
+import Banner from 'components/Banner';
+import Assets from 'components/Assets';
 
 const Layout = () => {
    return (
