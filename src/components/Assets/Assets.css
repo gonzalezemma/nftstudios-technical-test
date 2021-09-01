@@ -1,7 +1,9 @@
 .AssetsList {
     display: grid;
     align-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    justify-items: stretch;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     background-color: #282c34;
     gap: 10px;
+    padding: 1rem 10rem 10rem 10rem;
 }

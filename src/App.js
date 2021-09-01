@@ -1,14 +1,14 @@
-import Assets from './components/Assets/Assets';
+import Layout from './components/Layout/Layout';
 import { AssetsContextProvider } from 'context/assetsContext';
 import './App.css';
 
+
 function App() {
-  
   return (
     <div className="App">
-      <AssetsContextProvider>
-        <Assets/>
-      </AssetsContextProvider>
+        <AssetsContextProvider>
+          <Layout/>
+        </AssetsContextProvider>
     </div>
   );
 }

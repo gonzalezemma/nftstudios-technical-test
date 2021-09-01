@@ -2,15 +2,16 @@ import React from 'react';
 import { map } from 'lodash';
 import useAssets from 'hooks/useAssets';
 import Nft from 'components/Nft/Nft';
+import Spinner from 'components/Spinner/Spinner'
 import './Assets.css';
 
 const Assets = () => {
     const {assets, loading, loadingPage, lastRefAsset} = useAssets();
-
+    
     return (
-        <>
+        <>         
             {loading ? 
-                'Loading...' :
+            <Spinner/> :
                 <div className="AssetsList">
                     {map(assets, ({id, name, image_preview_url}) => (
                         <Nft 
@@ -18,13 +19,14 @@ const Assets = () => {
                             id={id} 
                             name={name} 
                             image={image_preview_url}
-                            lastRefAsset={lastRefAsset}                           
+                            lastRefAsset={lastRefAsset}                     
                         />
                     ))}
-                    {loadingPage && <p>loading...</p>}
+                    {loadingPage && <Spinner/>}
                 </div>
-            }
+            }        
         </>
-)}
+    )
+}
 
-export default Assets
+export default React.memo(Assets)
