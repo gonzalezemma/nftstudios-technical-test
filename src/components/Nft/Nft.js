@@ -3,7 +3,7 @@ import './Nft.css';
 
 
 const Nft = ({id, name, image, lastRefAsset}) => (
-    <div id={id} ref={lastRefAsset} className="Nft" data-testid="nft-test"> 
+    <div ref={lastRefAsset} className="Nft" data-testid={id}> 
         <img src={image} alt={name}/>
         <h6>{name}</h6>
     </div>
