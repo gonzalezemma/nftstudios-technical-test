@@ -5,9 +5,8 @@ import Context from 'context/assetsContext';
 import getNtfs from 'service/assets';
 
 const useAssets = () => {
-    const {assets, setAssets} = useContext(Context);
+    const {assets, setAssets, loading, setLoading} = useContext(Context);
     const [page, setPage] = useState(0);
-    const [loading, setLoading] = useState(false);
     const [loadingPage, setLoadingPage] = useState(false);
 
     const observer = useRef();
@@ -18,7 +17,7 @@ const useAssets = () => {
             setAssets(response);
             setLoading(false);
         });
-    }, [setAssets])
+    }, [setAssets, setLoading])
 
     useEffect(() => {
         if (page === 0) return;

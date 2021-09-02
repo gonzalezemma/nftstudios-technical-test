@@ -4,7 +4,7 @@ import Assets from 'components/Assets';
 
 const Layout = () => {
    return (
-        <div className="">
+        <div>
             <Banner/>
             <Assets/>
         </div>
